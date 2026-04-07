@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 venv/
 __pycache__/
 *.pyc
 users.db
 *.db
+=======
+venv/
+__pycache__/
+*.pyc
+users.db
+*.db
+>>>>>>> f95fcce4bb7a25ec005e1a2cb27b554a1d4b9f95
 .env
