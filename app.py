@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
-import pickle
 import matplotlib.pyplot as plt
+
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
 
 from auth import init_db, create_user, verify_user, save_prediction, get_user_history
 
@@ -33,9 +35,37 @@ if "predicted_score" not in st.session_state:
     st.session_state.predicted_score = None
 
 # -------------------------
-# LOAD MODEL
+# LOAD / TRAIN MODEL
 # -------------------------
-model, features = pickle.load(open("best_model.pkl", "rb"))
+@st.cache_resource
+def load_model():
+    df = pd.read_csv("advanced_student_data.csv")
+
+    features = [
+        "study_hours",
+        "attendance",
+        "sleep_hours",
+        "previous_score",
+        "social_media_usage",
+        "stress_level",
+        "preparation_level",
+        "extra_activities"
+    ]
+    target = "final_score"
+
+    X = df[features]
+    y = df[target]
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+
+    model = RandomForestRegressor(random_state=42)
+    model.fit(X_train, y_train)
+
+    return model, features
+
+model, features = load_model()
 
 # -------------------------
 # CUSTOM CSS
