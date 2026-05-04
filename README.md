@@ -152,13 +152,13 @@ https://student-performance-ai-bht65xvml9gq2qhvfpcu4r.streamlit.app/
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author--
 
 **Gurpreet Singh**
 B.Tech AI & Data Science
 
 ---
 
-## ⭐ If you like this project
+## ⭐ If you like this project--
 
 Give it a ⭐ on GitHub and share with others 🚀
