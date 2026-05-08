@@ -161,4 +161,4 @@ B.Tech AI & Data Science
 
 ## ⭐ If you like this project--
 
-Give it a ⭐ on GitHub and share with others 🚀
+Give it a Star 🌟 on GitHub and share with others 🚀
